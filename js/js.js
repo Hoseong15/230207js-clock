@@ -62,7 +62,6 @@ $('.btn4').on('click', function() {
   $('.menu ul').children('a').css('color','white');
   $('.middle-text').children('h1').css('color','white');
   $('.middle-text').children('p').css('color','gray');
-  $('.logo a').children('img').attr("src", './images/logo_w.png')
+  $('.logo a').children('img').attr("src", './images/logo_w.png');
   $('.middle-img').children('.clock').css('color','white');
-
 })
