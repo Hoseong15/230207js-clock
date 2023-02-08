@@ -14,9 +14,7 @@ a{
 	src: url(../webfonts/Orbitron-Regular.eot);
 	src: url(../webfonts/Orbitron-Regular.woff) format("woff");
 }
-body {
-	font-family: Orbitron, sans-serif;
-}
+body {font-family: Orbitron, sans-serif;}
 
 .wrapper{
   width: 100%;
@@ -26,6 +24,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 800ms ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
 label{
@@ -50,9 +50,9 @@ label{
   right: 150px;
   justify-content: space-between;
 }
-.menu a{
-  margin-right: 5px;
-}
+.menu a{margin-right: 5px;}
+
+.menu a:hover{border-bottom: 1px solid blue;}
 
 .section-wrapper{
   width: 100%;
@@ -66,10 +66,12 @@ label{
   left: 10%;
   font-size: 30px;
 }
+
 .middle-text span{
   color: #aaa;
   margin-left: 10px;
 }
+
 .middle-text p{
   font-size: 12px;
 }
@@ -88,13 +90,13 @@ label{
   right: 0;
   transition: all 800ms ease-in-out;
 }
+
 .fo-wrapper{
   display: flex;
   position: absolute;
   left: 70%;
   transform: translateX(-70%);
   width: 80%;
-  /* justify-content: space-between; */
 }
 
 .btn1,
@@ -112,15 +114,12 @@ label{
 
 
 .btn.is-active{
-  background-color: #000;
+  background: linear-gradient( to right, black, gray, white );
   color: #FFF;
   transition: all 800ms ease-in-out;
 }
 
-.btn{
-  background-color: #aaa;
-}
-
+.btn{background-color: #aaa;}
 
 .clock{
   position: absolute;
@@ -130,21 +129,21 @@ label{
   font-size: 50px;
 }
 
-.test{
-  background:url('./images/cloud1.png') ;
-  width:100%;
-  height:100vh;
-  position:absolute;
-  top:0;
-  background-size : 100% 100vh; 
-  animation: displace 5s linear infinite;
+.wrapper img:nth-child(2){
+  animation: 50s linear infinite;
   animation-direction: normal;
-  
+  animation-name: displace, fadeout;
+  position:absolute;
+  top:-80px;
+  left: 0;
 }
-
 
 @keyframes displace {
-  from { background-position: center 0;
-  } to { background-position: center 100VH }
+  0% { left: -100vw;} 
+  100%   { left:100vw}
 }
 
+@keyframes fadeout {
+  0% {opacity: .8;}
+  100%   {opacity: .8;}
+}
