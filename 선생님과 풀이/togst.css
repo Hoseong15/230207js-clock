@@ -20,7 +20,7 @@ a{
 /* 명시한 첫번쨰 폰트가 없을 경우 기본 폰트 지정 */
 body {font-family: Orbitron, sans-serif;}
 
-img{display: none;}
+/* img{display: none;} */
 
 #wrapper{
 	/* 뷰포트 기준으로 움직이므로 문서의 흐름을 벗어나서 화면 영역으로 정렬 */
@@ -189,3 +189,112 @@ nav li.on a{
 	background-image: url(../images/phone_night.png);
 }
 
+/* // night일 경우 로고, 컬러// */
+#wrapper.night h1 {
+  background: url(../images/logo_w.png) no-repeat;
+	background-size: contain;
+}
+
+#wrapper.night .gnb a {color: #FFF;}
+
+#wrapper.night .gnb li a::after{border-color: #FFF;}
+
+#wrapper.night section strong {color: #FFF;}
+
+#wrapper.night em,
+#wrapper.nigth p{
+	color: #999;
+}
+
+#wrapper.night #phone p {
+	color: #FFF;
+	letter-spacing: 3px;
+}
+
+#wrapper > img:nth-child(1){
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: .8;
+	z-index: -1;
+	/* width: 1200px; */
+	animation-name: ani1;
+	animation-duration: 100s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+#wrapper > img:nth-child(2){
+	position: absolute;
+	top: 20px;
+	left: 0;
+	opacity: .8;
+	z-index: -1;
+	/* name || duration || time-function */
+	animation: ani2  100s linear infinite;
+}
+
+@keyframes ani1 {
+	/* from - to */
+	0% {
+		left: -100vw;
+	}
+	100% {
+		left: 100vw;
+	}
+}
+
+@keyframes ani2 {
+	0% {
+		left: 0;
+	}
+	50% {
+		left: 1200px;
+	}
+	60% {
+		left: -1200px;
+	}
+	100% {
+		left: 0;
+	}
+}
+
+#phone p .cloud1 {
+	width: 600px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	animation: ani3 100s linear infinite;
+}
+
+#phone p .cloud2 {
+	width: 600px;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	animation: ani4 50s linear infinite;
+}
+
+@keyframes ani3 {
+	0% {
+		left: -100vw;
+	}
+	100% {
+		left: 100vw;
+	}
+}
+
+@keyframes ani4 {
+	0% {
+		left: 0;
+	}
+	50% {
+		left: 600px;
+	}
+	60% {
+		left: -600px;
+	}
+	100% {
+		left: 0;
+	}
+}
