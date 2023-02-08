@@ -3,6 +3,189 @@
 	src: url(../webfonts/Orbitron-Regular.eot);
 	src: url(../webfonts/Orbitron-Regular.woff) format("woff");
 }
-body {
-	font-family: Orbitron, sans-serif;
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
+
+li{list-style: none;}
+
+a{
+	text-decoration: none;
+	color: #555;
+}
+
+/* 명시한 첫번쨰 폰트가 없을 경우 기본 폰트 지정 */
+body {font-family: Orbitron, sans-serif;}
+
+img{display: none;}
+
+#wrapper{
+	/* 뷰포트 기준으로 움직이므로 문서의 흐름을 벗어나서 화면 영역으로 정렬 */
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+}
+
+.global-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 50px;
+}
+
+.logo{
+	width: 90px;
+	height: 80px;
+	/* 백그라운드 단축 */
+	background: url(../images/logo_b.png) no-repeat;
+	background-size: contain;
+	/* 같은 문법 */
+	/* background-image: url(../images/logo_b.png);
+	background-repeat: no-repeat; */
+}
+
+.gnb{display: flex;}
+
+.gnb li {margin-right: 30px;}
+
+.gnb li:last-child{margin-right: 0;}
+
+.gnb li a{
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.gnb li a:hover{color: #000;}
+
+.gnb li a::after{
+	content: '';
+	width: 100%;
+	display: block;
+	border-bottom: 2px solid #444;
+	padding-bottom: 5px;
+	transform: scaleX(0);
+	transition: transform 500ms ease-in-out;
+}
+
+.gnb li a:hover::after{transform: scaleX(1);}
+
+section{
+	position: absolute;
+	top: 300px;
+	left: 150px;
+}
+
+section p {
+	font-size: 50px;
+	color: #666;
+}
+
+section p strong {color: #333;}
+
+section em{
+	font-size: 14px;
+	font-style: normal;
+}
+
+#phone {
+	position: absolute;
+	top: 200px;
+	right: -300px;
+	width: 1200px;
+	height: 800px;
+	/* background-image: url(../images/phone_afternoon.png); */
+}
+
+/* css을 작성할때 순서 */
+/* 1.position */
+/* 2. width / height Size */
+/* 3. display */
+
+#phone p {
+	position: absolute;
+	top: 100px;
+	left: 135px;
+	width: 545px;
+	height: 310px;
+	overflow: hidden;
+	font-size: 60px;
+	font-weight: 700;
+	color: #333;
+	line-height: 310px;
+	padding-left: 60px;
+}
+
+nav{
+	position: fixed;
+	bottom: 70px;
+	width: 90%;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+nav ul{display: flex;}
+
+nav ul li {
+	width: 25%;
+	margin-right: 8px;
+}
+
+nav ul li:last-child{margin-right: 0;}
+
+nav ul li a {
+	display: block;
+	width: 100%;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 12px;
+	background-color: #fff;
+	opacity: .6;
+	color: #111;
+	font-weight: 700;
+	/* 자간 : 글자와 글자 사이 간격 */
+	letter-spacing: 3px;
+}
+
+nav ul li:hover a,
+nav li.on a{
+	color: #ddd;
+	background-color: #111;
+	opacity: .8;
+}
+
+
+/* background 변경 */
+#wrapper.morning{
+	background-image: url(../images/bg_morning.jpg);
+}
+#wrapper.morning #phone{
+	background-image: url(../images/phone_morning.png);
+}
+
+#wrapper.afternoon{
+	background-image: url(../images/bg_afternoon.jpg);
+}
+#wrapper.afternoon #phone{
+	background-image: url(../images/phone_afternoon.png);
+}
+
+
+#wrapper.evening{
+	background-image: url(../images/bg_evening.jpg);
+}
+#wrapper.evening #phone{
+	background-image: url(../images/phone_evening.png);
+}
+
+#wrapper.night{
+	background-image: url(../images/bg_night.jpg);
+}
+
+#wrapper.night #phone{
+	background-image: url(../images/phone_night.png);
+}
+
